@@ -12,7 +12,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.food_edeliveryapp.Components.ButtonClick
-import com.example.food_edeliveryapp.Navigation.MainScreen
 import com.example.food_edeliveryapp.R
 import com.example.food_edeliveryapp.ui.theme.Black
 import com.example.food_edeliveryapp.ui.theme.Primary
@@ -166,8 +165,6 @@ fun Checkout() {
         
         ButtonClick(buttonText = "CONFIRM ORDER")
 
-        // bottom navigation goes here
-        MainScreen()
     }
 
 

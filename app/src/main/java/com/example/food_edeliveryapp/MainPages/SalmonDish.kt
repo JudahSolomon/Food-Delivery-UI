@@ -2,7 +2,9 @@ package com.example.food_edeliveryapp.MainPages
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -17,17 +19,38 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.food_edeliveryapp.Components.ButtonClick
-import com.example.food_edeliveryapp.Navigation.MainScreen
 import com.example.food_edeliveryapp.R
 import com.example.food_edeliveryapp.ui.theme.*
+import com.example.jobfinder_app.Navigation.BottomNavigation.BottomBar
 
+@Composable
+fun SalmonDishUi() {
+
+    val navController = rememberNavController()
+
+    Scaffold(bottomBar = {
+        BottomBar(navController = navController)
+    }) {
+        LazyColumn{
+            item{
+                SalmonDish()
+            }
+        }
+
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
 fun SalmonDish() {
 
     Column(modifier = Modifier.fillMaxSize()) {
+        val navController = rememberNavController()
+
+
+
 
         Box(
             modifier = Modifier
@@ -205,9 +228,8 @@ fun SalmonDish() {
                         elevation = 5.dp,
                         modifier = Modifier
                             .padding(top = 5.dp)
-                            .size(width = 157.dp, height = 40.dp)
+                            .size(width = 170.dp, height = 50.dp)
                             .clip(RoundedCornerShape(20.dp))
-                            .padding(bottom = 0.dp)
 
                     ) {
 
@@ -280,10 +302,9 @@ fun SalmonDish() {
 
         ButtonClick(
             buttonText = "ADD TO BASKET",
-            modifier = Modifier.padding(bottom = 40.dp)
+            modifier = Modifier
+                .padding(start = 40.dp, end = 40.dp)
         )
 
-        // bottom navigation goes here
-        MainScreen()
     }
 }

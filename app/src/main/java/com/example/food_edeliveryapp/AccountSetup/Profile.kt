@@ -4,8 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,12 +20,30 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.food_edeliveryapp.Navigation.MainScreen
+import androidx.navigation.compose.rememberNavController
 import com.example.food_edeliveryapp.R
 import com.example.food_edeliveryapp.ui.theme.Black
 import com.example.food_edeliveryapp.ui.theme.LightGrey
 import com.example.food_edeliveryapp.ui.theme.Primary
 import com.example.food_edeliveryapp.ui.theme.White
+import com.example.jobfinder_app.Navigation.BottomNavigation.BottomBar
+
+@Composable
+fun ProfileScreenUi() {
+
+    val navController = rememberNavController()
+
+    Scaffold(bottomBar = {
+        BottomBar(navController = navController)
+    }) {
+        LazyColumn {
+            item {
+                ProfileScreen()
+            }
+        }
+
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
@@ -152,8 +172,6 @@ fun ProfileScreen() {
 
         }
 
-        // bottom navigation goes here
-        MainScreen()
 
     }
 }

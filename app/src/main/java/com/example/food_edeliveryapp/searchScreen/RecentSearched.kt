@@ -1,7 +1,9 @@
 package com.example.food_edeliveryapp.searchScreen
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -11,16 +13,34 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.food_edeliveryapp.Components.ResentSearchedItems
 import com.example.food_edeliveryapp.Components.Search
 import com.example.food_edeliveryapp.Components.SearchedItems
-import com.example.food_edeliveryapp.Navigation.MainScreen
 import com.example.food_edeliveryapp.R
 import com.example.food_edeliveryapp.ui.theme.Black
 import com.example.food_edeliveryapp.ui.theme.DarkGrey
 import com.example.food_edeliveryapp.ui.theme.LightWhite
 import com.example.food_edeliveryapp.ui.theme.Primary
+import com.example.jobfinder_app.Navigation.BottomNavigation.BottomBar
 
+
+@Composable
+fun ResentSearchedScreenUi() {
+
+    val navController = rememberNavController()
+
+    Scaffold(bottomBar = {
+        BottomBar(navController = navController)
+    }) {
+        LazyColumn {
+            item {
+                ResentSearchedScreen()
+            }
+        }
+
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
@@ -224,9 +244,6 @@ fun ResentSearchedScreen() {
             ResentSearchedItems(searchText = "Falooda")
 
         }
-
-        // bottom navigation goes here
-        MainScreen()
     }
 
 }

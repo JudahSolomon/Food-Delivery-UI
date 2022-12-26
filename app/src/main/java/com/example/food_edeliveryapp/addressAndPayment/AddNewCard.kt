@@ -1,6 +1,7 @@
 package com.example.food_edeliveryapp.PaymentSetup
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -13,13 +14,32 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.food_edeliveryapp.Components.FirstNameAndLastName
-import com.example.food_edeliveryapp.Navigation.MainScreen
 import com.example.food_edeliveryapp.R
 import com.example.food_edeliveryapp.ui.theme.Black
 import com.example.food_edeliveryapp.ui.theme.LightWhite
 import com.example.food_edeliveryapp.ui.theme.Primary
 import com.example.food_edeliveryapp.ui.theme.White
+import com.example.jobfinder_app.Navigation.BottomNavigation.BottomBar
+
+
+@Composable
+fun AddNewCardScreenUi() {
+
+    val navController = rememberNavController()
+
+    Scaffold(bottomBar = {
+        BottomBar(navController = navController)
+    }) {
+        LazyColumn {
+            item {
+                AddNewCardScreen()
+            }
+        }
+
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
@@ -184,9 +204,6 @@ fun AddNewCardScreen() {
 
 
         }
-
-        // bottom navigation goes here
-        MainScreen()
 
 
     }

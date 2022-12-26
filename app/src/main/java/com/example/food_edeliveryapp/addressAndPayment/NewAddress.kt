@@ -1,7 +1,9 @@
 package com.example.food_edeliveryapp.PaymentSetup
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Icon
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -12,12 +14,32 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.food_edeliveryapp.Components.ButtonClick
-import com.example.food_edeliveryapp.Navigation.MainScreen
 import com.example.food_edeliveryapp.R
+import com.example.food_edeliveryapp.addressAndPayment.ContactSupportScreen
 import com.example.food_edeliveryapp.ui.theme.Black
 import com.example.food_edeliveryapp.ui.theme.Primary
 import com.example.food_edeliveryapp.ui.theme.Secondary
+import com.example.jobfinder_app.Navigation.BottomNavigation.BottomBar
+
+
+@Composable
+fun NewAddressUi() {
+
+    val navController = rememberNavController()
+
+    Scaffold(bottomBar = {
+        BottomBar(navController = navController)
+    }) {
+        LazyColumn {
+            item {
+                NewAddress()
+            }
+        }
+
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
@@ -147,8 +169,6 @@ fun NewAddress() {
 
         ButtonClick(buttonText = "CONFIRM ORDER")
 
-        // bottom navigation goes here
-        MainScreen()
     }
 
 

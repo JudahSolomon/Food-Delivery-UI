@@ -1,4 +1,4 @@
-package com.example.food_edeliveryapp.Navigation
+package com.example.jobfinder_app.Navigation.BottomNavigation
 
 import com.example.food_edeliveryapp.R
 
@@ -30,4 +30,5 @@ sealed class BottomBarScreen(
         route = "profile",
         icon = R.drawable.profile_icon
     )
+
 }

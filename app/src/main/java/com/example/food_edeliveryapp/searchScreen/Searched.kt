@@ -2,8 +2,10 @@ package com.example.food_edeliveryapp.searchScreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,13 +15,32 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.food_edeliveryapp.Components.FoodDishes
 import com.example.food_edeliveryapp.Components.Search
 import com.example.food_edeliveryapp.Components.SearchedItems
-import com.example.food_edeliveryapp.Navigation.MainScreen
+import com.example.food_edeliveryapp.MainPages.SalmonDish
 import com.example.food_edeliveryapp.R
 import com.example.food_edeliveryapp.ui.theme.*
+import com.example.jobfinder_app.Navigation.BottomNavigation.BottomBar
 
+
+@Composable
+fun SearchScreenUi() {
+
+    val navController = rememberNavController()
+
+    Scaffold(bottomBar = {
+        BottomBar(navController = navController)
+    }) {
+        LazyColumn{
+            item{
+                SearchScreen()
+            }
+        }
+
+    }
+}
 
 @OptIn(ExperimentalMaterialApi::class)
 @Preview(showBackground = true)
@@ -157,8 +178,6 @@ fun SearchScreen() {
 
         }
 
-        // bottom Navigation goes here
-        MainScreen()
 
 
 

@@ -1,6 +1,8 @@
 package com.example.food_edeliveryapp.AddedItems
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -9,12 +11,31 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.food_edeliveryapp.Components.ButtonClick
-import com.example.food_edeliveryapp.Navigation.MainScreen
+import com.example.food_edeliveryapp.MainPages.SalmonDish
 import com.example.food_edeliveryapp.R
 import com.example.food_edeliveryapp.ui.theme.Black
 import com.example.food_edeliveryapp.ui.theme.Secondary
+import com.example.jobfinder_app.Navigation.BottomNavigation.BottomBar
 
+
+@Composable
+fun BasketScreenUi() {
+
+    val navController = rememberNavController()
+
+    Scaffold(bottomBar = {
+        BottomBar(navController = navController)
+    }) {
+        LazyColumn{
+            item{
+                BasketScreen()
+            }
+        }
+
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
@@ -73,16 +94,15 @@ fun BasketScreen() {
                 fontWeight = FontWeight.Bold,
                 color = Secondary,
                 modifier = Modifier
-                    .padding(bottom = 0.dp)
+                    .padding(bottom = 40.dp)
 
             )
             
-            ButtonClick(buttonText = "PROCEED TO CHECKOUT")
+            ButtonClick(buttonText = "PROCEED TO CHECKOUT",
+                modifier = Modifier.padding(bottom = 0.dp))
 
 
         }
 
-        // bottom navigation goes here
-        MainScreen()
     }
 }
