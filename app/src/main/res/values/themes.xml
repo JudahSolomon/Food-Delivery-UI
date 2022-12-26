@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.FOODEDeliveryApp" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
+
+    <style name="Theme.YourApp" parent="android:Theme.Black.NoTitleBar.Fullscreen">
+        //theme content...
+
+    </style>
+
+    <style name="Theme.DialogFullScreen" parent="@style/Theme.FOODEDeliveryApp">
+        <item name="android:windowMinWidthMajor">100%</item>
+        <item name="android:windowMinWidthMinor">100%</item>
+    </style>
+</resources>

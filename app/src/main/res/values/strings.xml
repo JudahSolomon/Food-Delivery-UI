@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">FOOD-E Delivery App</string>
+    <string name="delicious_food">Discover delicious food from the amazing restaurants near you</string>
+    <string name="best_deal_around">Grab the best deals and discounts around and save on your every order</string>
+    <string name="deliver_booster">Fresh and delicious local food delivered from the restaurants to your doorstep</string>
+    <string name="get_started">Get started and enjoy the awesome local food right at your home.</string>
+
+
+    <string name="delivery_pathner">Your best delivery pathname</string>
+
+    <string name="office">Suite 03, Johnson Business Park, 554537</string>
+
+    <string name="home">Apt. 12, Watson Bldg., 13th Ave. and St. James St., 406035</string>
+
+
+    <string name="new_address">Apt. 12, Watson Bldg., 13th Ave. and St. James St., 406035</string>
+
+    <string name="something_went_wrong">Something went wrong. We’ll look into the issue right away.</string>
+
+
+    <string name="order_confirmed">Hang on Tight! We’ve received your
+        order and we’ll bring it to you ASAP!</string>
+
+
+    <!--    add description text here-->
+
+    <string name="description">Non odit iusto delectus maxime sit placeat voluptatum dolorem.
+    Dolores quos rerum iusto. Beatae totam ab veritatis aliquid tenetur qui ut. Quia ut
+    dolorum enim et. Exercitationem occaecati eum est ex qui harum aliquam. </string>
+    <string name="email_sent">We’ve sent you an email at user@email.com
+        for verification. Check your email for the verification link.</string>
+
+</resources>
